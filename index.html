@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vehicle Purchase Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Vehicle Purchase Calculator</h1>
+    <p class="subtitle">Estimate your total cost and monthly payment</p>
+
+    <div class="layout">
+      <form id="calc-form" class="card" novalidate>
+        <div class="field">
+          <label for="vehicle-price">Vehicle Price ($)</label>
+          <input type="number" id="vehicle-price" min="0" step="100" value="30000" required />
+        </div>
+
+        <div class="field">
+          <label for="down-payment">Down Payment ($)</label>
+          <input type="number" id="down-payment" min="0" step="100" value="5000" required />
+        </div>
+
+        <div class="field">
+          <label for="interest-rate">Interest Rate (% APR)</label>
+          <input type="number" id="interest-rate" min="0" max="100" step="0.01" value="6.5" required />
+        </div>
+
+        <div class="field">
+          <label for="loan-term">Loan Term (months)</label>
+          <select id="loan-term">
+            <option value="24">24 months (2 years)</option>
+            <option value="36">36 months (3 years)</option>
+            <option value="48">48 months (4 years)</option>
+            <option value="60" selected>60 months (5 years)</option>
+            <option value="72">72 months (6 years)</option>
+            <option value="84">84 months (7 years)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="processing-fee">Dealership Processing Fee ($)</label>
+          <input type="number" id="processing-fee" min="0" step="10" value="500" required />
+        </div>
+
+        <div class="field">
+          <label for="state-tax">State Tax Rate (%)</label>
+          <input type="number" id="state-tax" min="0" max="100" step="0.01" value="7" required />
+        </div>
+
+        <p id="error-message" class="error" hidden></p>
+
+        <div class="actions">
+          <button type="submit" class="btn-primary">Calculate</button>
+          <button type="button" id="reset-btn" class="btn-secondary">Reset</button>
+        </div>
+      </form>
+
+      <section class="card results" id="results" hidden>
+        <h2>Results</h2>
+
+        <div class="highlight">
+          <span class="highlight-label">Monthly Payment</span>
+          <span class="highlight-value" id="monthly-payment">$0.00</span>
+        </div>
+
+        <dl class="breakdown">
+          <div class="row">
+            <dt>Vehicle Price</dt>
+            <dd id="out-price">$0.00</dd>
+          </div>
+          <div class="row">
+            <dt>State Tax</dt>
+            <dd id="out-tax">$0.00</dd>
+          </div>
+          <div class="row">
+            <dt>Processing Fee</dt>
+            <dd id="out-fee">$0.00</dd>
+          </div>
+          <div class="row subtotal">
+            <dt>Total Purchase Cost</dt>
+            <dd id="out-total-cost">$0.00</dd>
+          </div>
+          <div class="row">
+            <dt>Down Payment</dt>
+            <dd id="out-down" class="negative">-$0.00</dd>
+          </div>
+          <div class="row subtotal">
+            <dt>Amount Financed</dt>
+            <dd id="out-financed">$0.00</dd>
+          </div>
+          <div class="row">
+            <dt>Total Interest Paid</dt>
+            <dd id="out-interest">$0.00</dd>
+          </div>
+          <div class="row total">
+            <dt>Total Amount Paid</dt>
+            <dd id="out-grand-total">$0.00</dd>
+          </div>
+        </dl>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
