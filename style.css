@@ -84,6 +84,34 @@ h1 {
   background: #ffffff;
 }
 
+.wanted-field {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1.1rem;
+}
+
+.inline-input {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.inline-input input {
+  flex: 1;
+  min-width: 0;
+}
+
+.inline-input .btn-secondary {
+  flex: none;
+  white-space: nowrap;
+  font-size: 0.85rem;
+  padding: 0.6rem 0.75rem;
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: 0.35rem;
+}
+
 .error {
   color: #b91c1c;
   background: #fee2e2;
