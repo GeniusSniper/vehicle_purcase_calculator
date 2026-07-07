@@ -1,4 +1,5 @@
 const form = document.getElementById("calc-form");
+const layout = document.querySelector(".layout");
 const resetBtn = document.getElementById("reset-btn");
 const resultsSection = document.getElementById("results");
 const errorMessage = document.getElementById("error-message");
@@ -92,12 +93,14 @@ function displayResults(inputs, results) {
   document.getElementById("out-interest").textContent = currency.format(results.totalInterest);
   document.getElementById("out-grand-total").textContent = currency.format(results.grandTotal);
   resultsSection.hidden = false;
+  layout.classList.add("has-results");
 }
 
 function showError(message) {
   errorMessage.textContent = message;
   errorMessage.hidden = false;
   resultsSection.hidden = true;
+  layout.classList.remove("has-results");
 }
 
 function clearError() {
@@ -122,4 +125,5 @@ resetBtn.addEventListener("click", () => {
   form.reset();
   clearError();
   resultsSection.hidden = true;
+  layout.classList.remove("has-results");
 });
