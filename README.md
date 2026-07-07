@@ -1,5 +1,7 @@
 # Vehicle Purchase Calculator
 
+**Live demo:** [https://geniussniper.github.io/vehicle_purcase_calculator/](https://geniussniper.github.io/vehicle_purcase_calculator/)
+
 A simple, dependency-free web app for estimating the true cost of buying a vehicle — including state tax, dealership fees, and loan interest — with a full cost breakdown and monthly payment estimate.
 
 Built with plain **HTML, CSS, and JavaScript**. No frameworks, no build step.
@@ -57,20 +59,14 @@ Then visit `http://localhost:8000`.
 
 ## Deployment (GitHub Pages)
 
-This repo includes a GitHub Actions workflow ([.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml)) that deploys the site to GitHub Pages on every push to `main`.
+The site is deployed with GitHub Pages and is live at:
 
-One-time setup:
-
-1. Push the repo to GitHub.
-2. Go to **Settings → Pages** and set **Source** to **GitHub Actions**.
-
-The site will then be live at `https://<your-username>.github.io/<repo-name>/`.
+**[https://geniussniper.github.io/vehicle_purcase_calculator/](https://geniussniper.github.io/vehicle_purcase_calculator/)**
 
 ## Project Structure
 
 ```
 ├── index.html   # Page markup and form
 ├── style.css    # Layout and styling
-├── script.js    # Validation, calculation, and display logic
-└── .github/workflows/deploy-pages.yml   # GitHub Pages deployment
+└── script.js    # Validation, calculation, and display logic
 ```
